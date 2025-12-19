@@ -1,0 +1,13 @@
+In NoSQL database system databases are grouped into four categories:
+  1. key-value stores,
+  2. graph stores,
+  3. column stores,
+  4. and document stores.
+
+Relational databases exist are over 40 years and historically, they have worked well.
+
+Non-relational databases might be the right choice if:
+  • Your application requires super-low latency.
+  • Your data are unstructured, or you do not have any relational data.
+  • You only need to serialize and deserialize data (JSON, XML, YAML, etc.).
+  • You need to store a massive amount of data.

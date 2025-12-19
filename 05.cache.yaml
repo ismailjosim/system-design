@@ -1,0 +1,40 @@
+A cache is a temporary storage area that stores the results of expensive responses or frequently accessed data in memory so that subsequent requests can be served more quickly. each time a new web page is loaded, one or more database calls are made to fetch the data. Repeated database calls greatly affect the performance of the application. In that case, Caching can mitigate this problem.
+
+Cache tier
+The cache tier is a temporary data store layer, which is much faster than the database. The benefits of having a separate cache layer include improved system performance, the ability to reduce the workload on the database, and the ability to scale the cache layer independently.
+
+After receiving a request, a web server first checks if the cache has the available response. If it has, it sends data back to the client. If not, it queries the database, stores the response in
+cache, and sends it back to the client. This caching strategy is called a read-through cache. Other caching strategies are available depending on the data type, size, and access patterns.
+
+
+1. When to Use Cache
+Cache is best when data is read frequently but updated rarely. Not ideal for persistent data (because cache data is stored in memory and can be lost if the server restarts).
+
+2. Expiration Policy
+  Cached data should have an expiration time. After expiration, data is removed from cache. Expiration time should be:
+    ❌ Not too short → causes frequent database reloads
+    ❌ Not too long → may return outdated data
+    ✅ Balanced based on use case
+
+3. Consistency
+  Cache and main data store must stay in sync. Inconsistency can happen if update are not handled together.
+  This is harder when:
+    Using multiple servers
+    Scaling the system
+
+4. Single Point of Failure (SPOF)
+A single cache server can become a single point of failure. If it goes down, the whole system can be affected.
+  Solution:
+    Use multiple cache servers
+    Distribute them across different data centers
+    Allocate extra memory (overprovisioning)
+
+5. Eviction Policy
+When cache is full, some data must be removed → called cache eviction. Common eviction strategies:
+    LRU (Least Recently Used) - most popular
+    LFU (Least Frequently Used)
+    FIFO (First In, First Out)
+
+👉 In short:
+Cache improves performance but needs careful handling of expiration, consistency, failure risks, and eviction policies.
+
