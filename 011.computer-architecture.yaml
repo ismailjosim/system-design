@@ -1,0 +1,45 @@
+At the core of computer  understand only binary 0s and 1s
+these are represented as bits one bit is the smallest data unit in computing. it can be either 0 or 1
+
+one bite consists of 8 bit and it's used to represent a single character like  A or number like 1
+expending from here we have kilobyte,megabyte,gigabytes and terabytes.
+here is the represented table:
+bit = 0 or 1
+byte = 8 bits(A,1)
+
+KB - 1024 bytes
+MB - 1024 KBs
+GB - 1024 MBs
+TB - 1024 GBs
+
+to store  the data in our computer we have disk storage which holds the primary data. it can be either HDD or SSD type. the disk storage is nonvolatile. it maintains data without power. meaning if we turn off or restart the computer the data still be there.
+
+it contains the OS applications and all user files.
+
+RAM - Random Access Memory
+- primary active data holder
+- holds structures vars and applications data that are currently in used or being processed. whe a programme runs it vars intermediate computations runtime stack adn more are stored in ram because it allows for quick read and write access.
+- it's a volatile Memory which means it requires power to retain its contents and after restart or power off the computer the data may not be persisted.
+
+- there read/write speed often surpasses 5000mb/s which is faster than even the fastest SSDs speed. sometimes this speed isn't enough which brings us to the cache.
+
+ Cache
+- cache is smaller than ram
+- typically it's measured in megabytes but access times for cache memory are even faster than ram offering just a few NANO Seconds for the L1 cache.
+- the cpu first checks the l1 cache for the data. if it's not found it checks the l2 and l3 cache then finally it checks the ram
+- it's purpose to reduce the average time to access data
+- to optimize cpu performance we store frequently used data.
+
+CPU
+- brain of the computer
+- fetches, decodes and executes the instructions.
+- but to run high level code like JAVA, C++, Python... we need to compile them into machine code.
+- can read and write from ram, disk and cache data
+
+compiler:
+- perform the translation into machine code
+
+motherboard/mainboard:
+- the components that connects everything
+- provides the path phase that allow data to flow between these components.
+

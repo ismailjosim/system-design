@@ -1,0 +1,10 @@
+IP Address: Internet Protocol or simply IP Address is a unique number that identify internet or locally connected devices together.
+
+IP versions: IPv4 and IPv6
+
+IPv4: The original Internet protocol is IPv4. It uses 32-bit numbers that are divided into four parts, each part can be from 0 to 255. example:- 102.22.192.181
+
+Here: 102.22.192.181
+  0-255,0-255,0-255,0-255
+
+Address: IPv4 can only create 4.3 billion (429 million) unique addresses. That may sound like a lot, but it's not enough for the number of devices the internet has expanded so rapidly - mobile, IoT, smart TVs.

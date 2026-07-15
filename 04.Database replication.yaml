@@ -1,0 +1,28 @@
+Database replication is the process of copying and syncing data from a primary database to one or more replica databases to ensure data availability, reliability, and performance, allowing users to access up-to-date information from multiple locations while distributing the load and providing redundancy against server failure. It typically involves a master database sending changes (inserts, updates, deletes) to follower databases, often in real-time or on a schedule, creating a distributed system for better scalability and fault tolerance.
+
+
+A master database typically supports only write operations. A slave database collects copies of data from the master database and supports only read operations. All data-modifying commands, such as inserts, deletes, or updates, must be sent to the master database. Most applications require a much higher ratio of writes to reads; therefore, the number of slave databases in a system is typically greater than the number of master databases.
+
+Benefits of Database Replication:
+  • Improved Performance: In the master-slave model, all writes and updates occur on the master nodes; whereas, read operations are distributed to the slave nodes. This model improves performance because it allows more queries to be processed in parallel.
+
+  • Reliability: If one of your database servers is destroyed by a natural disaster such as a typhoon or earthquake, the data is still preserved. You don't need to worry about data loss because the data is replicated in multiple locations.
+
+  • High Availability: By replicating data across multiple locations, your website  operation even if a database is offline as you can access data stored in another database server.
+
+Now the question is what if one of the databases goes offline?
+
+  • If only one slave database is available and it goes offline, read operations will be temporarily directed to the master database. As soon as the problem is found, a new slave database will be used in place of the old one. If multiple slave databases are available, read operations will be redirected to other healthy slave databases. A new database server will be used in place of the old one.
+
+  • If the master database goes offline, a slave database will be promoted to the new master. All database operations will be temporarily performed on the new master database. A new slave database will immediately replace the old one for data replication.
+
+In a production system, promoting a new master is more complicated because the data on a slave database may not be up to date. Data recovery scripts will need to be run to update the missing data. Although some other replication methods, such as multi-master and circular replication, can help, those setups are more complicated;
+
+Let us take a look now  what our system looks like:
+  • A user gets the IP address of the load balancer from DNS.
+  • A user connects the load balancer with this IP address.
+  • The HTTP request is routed to either Server 1 or Server 2.
+  • A web server reads user data from a slave database.
+  • A web server routes any data-modifying operations to the master database. This includes write, update, and delete operations.
+
+Now, we have a solid understanding of the web and data tiers, it is time to improve the load/response time. This can be done by adding a cache layer and shifting static content (JavaScript/CSS/image/video files) to the content delivery network (CDN).

@@ -1,0 +1,14 @@
+# the hight level architecture of a production ready app:
+key areas:
+  - CI/CD Pipeline
+
+## CI/CD Pipeline
+* meaning Continuous Integration and Continuous Deployment/Delivery
+* our code goes from our repository through a series of tests and Pipeline. checks and on to the production server without any manual intervention
+* Configured with  platforms like Jenkins or  GitHub actions. for automating or Deployment process.
+
+once our app is in production it handle thousands of requests. this manages by our load balancer and reverse proxies like Ngenx.
+
+- it make sure that user requests are evenly distributed across multiple servers maintaining a smooth user experience even during traffic specs
+
+- for data storing an external server that is not running on the same production server. instead it connected over a network
